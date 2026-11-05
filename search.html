@@ -4,49 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>البحث عن جهاز - محدد موقع IP</title>
-    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
-        <nav>
+        <div class="logo">📍 IP Finder</div>
+        <button class="menu-toggle" id="mobile-menu">☰</button>
+        <nav id="nav-menu">
             <ul>
                 <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="search.html">البحث عن جهاز</a></li>
+                <li><a href="search.html" class="active" id="search-link">البحث عن جهاز</a></li>
                 <li><a href="about.html">نبذة عن الموقع</a></li>
                 <li><a href="contact.html">تواصل معنا</a></li>
-                <li><a href="login.html">تسجيل الدخول</a></li>
+                <li><a href="login.html" id="auth-link">تسجيل الدخول</a></li>
             </ul>
         </nav>
     </header>
 
-   
+    <main>
         <section>
-            <h2>البحث عن موقع جهاز عبر عنوان الـ IP</h2>
-            <form action="#" method="GET">
-                <label for="ip-address">أدخل عنوان الـ IP:</label>
-                <input type="text" id="ip-address" name="ip" placeholder="مثال: 192.168.1.1" required>
-                <button type="submit">بحث</button>
+            <h2>البحث عن موقع جهاز عبر الـ IP أو GPS</h2>
+            
+            <!-- نموذج البحث بالـ IP -->
+            <form id="search-form">
+                <div>
+                    <label for="ip-address">أدخل عنوان الـ IP:</label>
+                    <input type="text" id="ip-address" placeholder="مثال: 8.8.8.8">
+                </div>
+                <button type="submit">بحث بالـ IP</button>
             </form>
+
+            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #ddd;">
+
+            <!-- زر تحديد الموقع الفوري للجهاز الحالي عبر GPS -->
+            <div style="text-align: center;">
+                <button id="geo-btn" style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+                    📍 تحديد موقع جهازي الحالي (GPS)
+                </button>
+            </div>
         </section>
     
-
-     
         <section id="results-section">
             <h3>نتائج البحث:</h3>
             <ul>
-                <li><strong>عنوان الـ IP:</strong> -</li>
-                <li><strong>الدولة:</strong> -</li>
+                <li><strong>نوع الموقع:</strong> -</li>
+                <li><strong>عنوان الـ IP / الجهاز:</strong> -</li>
+                <li><strong>الدولة / المنطقة:</strong> -</li>
                 <li><strong>المدينة:</strong> -</li>
                 <li><strong>خط الطول والعرض:</strong> -</li>
                 <li><strong>مقدم الخدمة (ISP):</strong> -</li>
             </ul>
         </section>
-    
+    </main>
 
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026</p>
+        <p>جميع الحقوق محفوظة &copy; 2026 | تصميم وتطوير الموقع</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>
